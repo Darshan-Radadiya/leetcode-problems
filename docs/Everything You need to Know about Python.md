@@ -209,6 +209,9 @@ for key, val in myMap.items():
     print(key, val)
 >>> "alice" 90
 >>> "bob" 70
+
+# to add plus one in dic value. if its first run it will initalize this with zero.
+>>> countOfLetterInS[s[i]] = 1 +countOfLetterInS.get(s[i], 0)
 ```
 
 # Heaps
