@@ -21,4 +21,4 @@
 
 
 
-Note: All the content and photos are research on google. 
+Note: All the content is mixture of my own understanding and research on google. 
