@@ -52,34 +52,94 @@ def printHalfDiamondStarPattern(N):
         for j in range(0,N-i):
             print("* " ,end=' ')
         print(" ")
-    
 
-number = 10
+def printNumberCrownPattern(N):
+    space = 2 * (N-1)
+
+    for i in range(1,N+1):
+    #Number
+        for j in range(1,i+1):
+            print(j, end=' ')
+    
+    #Space
+        for j in range(1,space+1):
+            print(" " ,end=' ') 
+    
+    #Space
+        for j in range(i,0,-1):
+            print(j ,end=' ')
+
+        print(" ")
+        space -= 2
+
+def printSymmetricVoidPattern(N):
+
+    space = 0
+    for i in range(0,N):
+
+        for j in range(1, N-i+1):
+            print(j, end=" ")
+
+        for j in range(space):
+             print(" ", end=' ')
+
+        for j in range(1, N-i+1):
+             print(j, end = ' ')
+
+        print()
+        space += 2
+
+    space = 2*(N-1)
+    for i in range(1,N+1):
+
+        for j in range(1, i+1):
+            print(j, end=" ")
+
+        for j in range(1, space+1):
+             print(" ", end=' ')
+
+        for j in range(i,0,-1):
+             print(j, end = ' ')
+
+        print(" ")
+        space -= 2
+        
+        
+NUMBER = 4
 
 print("printReactangularPattern = ")
-printReactangularPattern(number)
+printReactangularPattern(NUMBER)
 print("-------------------------")
 
 print("printRightAngledTrianglePattern = ")
-printRightAngledTrianglePattern(number)
+printRightAngledTrianglePattern(NUMBER)
 print("-------------------------")
 
 print("printRightAngledNumberPyramid = ")
-printRightAngledNumberPyramid(number)
+printRightAngledNumberPyramid(NUMBER)
 print("-------------------------")
 
 print("printInvertedRightPyramid = ")
-printInvertedRightPyramid(number)
+printInvertedRightPyramid(NUMBER)
 print("-------------------------")
 
 print("printTrianglePyramid = ")
-printTrianglePyramid(number)
+printTrianglePyramid(NUMBER)
 print("-------------------------")
 
 print("printDiamondStarPattern = ")
-printDiamondStarPattern(number)
+printDiamondStarPattern(NUMBER)
 print("-------------------------")
 
 print("printDiamondStarPattern = ")
-printHalfDiamondStarPattern(number)
+printHalfDiamondStarPattern(NUMBER)
+print("-------------------------")
+
+
+print("printDiamondStarPattern = ")
+printNumberCrownPattern(NUMBER)
+print("-------------------------")
+
+print("printDiamondStarPattern = ")
+printSymmetricVoidPattern(NUMBER)
 print("-------------------------")
