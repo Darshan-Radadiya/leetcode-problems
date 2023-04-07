@@ -17,8 +17,8 @@
 
 <br />
 
-### 
-
+### SQL CheatSheet
+>![image](Images/SQL-cheetsheet.jpg)
 
 
 Note: All the content is mixture of my own understanding and research on google. 
