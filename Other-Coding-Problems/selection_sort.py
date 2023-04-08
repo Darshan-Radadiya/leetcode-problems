@@ -1,6 +1,7 @@
 # Time complexity = O(n^2) - in all 3 case.
+# Space complexity = O(1)
 
-def selectionsort(arr):
+def selectionSort(arr):
     n = len(arr)
 
     for i in range(0, n-1):
@@ -17,4 +18,4 @@ def selectionsort(arr):
     return arr
         
 inp = [52,63,85,42,12,9,5,45]
-print(selectionsort(inp))    
+print(selectionSort(inp))    

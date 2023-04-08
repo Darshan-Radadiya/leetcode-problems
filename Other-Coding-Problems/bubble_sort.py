@@ -1,7 +1,7 @@
 #Time complexity = O(N^2) - for worst and average case
 # for best case its O(N)
 # it is opposite of a selection sort like here we are replacing the max with adjacent value.
-
+# Spcace complexity = O(1)
 def bubbleSort(arr):
 
     n = len(arr)
