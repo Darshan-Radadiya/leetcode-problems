@@ -1,3 +1,8 @@
+class Solution:
+    def lengthOfLongestSubstring(S):
+        return ""
+
+
 sol = Solution()
 s = "abcabcbb"
 Output = 3
