@@ -21,4 +21,9 @@
 >![image](Images/SQL-cheetsheet.jpg)
 
 
-Note: All the content is mixture of my own understanding and research on google. 
+### Must-Have for Coding interview
+>![image](Images/Must-have.png)
+
+
+
+###### Note: All the content is mixture of my own understanding and the material I found online.  
