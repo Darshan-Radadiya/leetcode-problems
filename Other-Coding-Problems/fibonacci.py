@@ -12,14 +12,26 @@ def feb_without_memo(n):
 # we can do it in O(n) time and space.
 # that is much more efficient
 
-def feb_with_memo(n, memo):
+# Memoization approach
+
+def fibonacciWithMemo(n, memo):
     if n in memo:
         return memo[n]
     if n <= 2:
         return 1
     
-    memo[n] = feb_with_memo(n-1,memo) + feb_with_memo(n-2,memo)
+    memo[n] = fibonacciWithMemo(n-1,memo) + fibonacciWithMemo(n-2,memo)
     return memo[n]
 
-print("feb_with_memo", feb_with_memo(50,{}))
- 
+print("\tfeb_with_memo    \t", fibonacciWithMemo(50,{}))
+
+# Tabulation Approach
+
+def fibonacciWithTabulation(n):
+    dp = [0]*(n+1)
+    dp[1] = 1
+    for i in range(2,n+1):
+        dp[i] = dp[i - 1] + dp[i - 2]
+    return (dp[n])
+
+print("\tfeb_with_Tabulation\t", fibonacciWithTabulation(50))
