@@ -20,21 +20,21 @@ def allConstruct(target, wordBank,memo):
     return results
 
 
-# def allConstruct(target, wordBank):
-#     dp = [[] for _ in range(len(target) + 1)]
-#     dp[0] = [[]]
+def allConstructTabulation(target, wordBank):
+    dp = [[] for _ in range(len(target) + 1)]
+    dp[0] = [[]]
 
-#     for i in range(len(target) + 1):
-#         if dp[i]:
-#             for word in wordBank:
-#                 if target[i:i+len(word)] == word:
-#                     newCombinations = [combination + [word] for combination in dp[i]]
-#                     dp[i+len(word)].extend(newCombinations)
+    for i in range(len(target) + 1):
+        if dp[i]:
+            for word in wordBank:
+                if target[i:i+len(word)] == word:
+                    newCombinations = [combination + [word] for combination in dp[i]]
+                    dp[i+len(word)].extend(newCombinations)
 
-#     return dp[len(target)]
+    return dp[len(target)]
 
 
 
 print(allConstruct('purple',['purp', 'p', 'ur' , 'le', 'purpl'],{} ))
 print(allConstruct('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaz',['a', 'aa', 'aaa' , 'aaaa', 'aaaaa'], {} ))
-print( " '\033[1m' Time complexity is exponential O(n^m) and space is O(m(height of the tree)) '\033[0m' ")
+print( " '\033[1m' Time complexity is exponential O(n^m) for both approach and space is O(m(height of the tree)) for memo and O(n^m) for Tabulation'\033[0m' ")
