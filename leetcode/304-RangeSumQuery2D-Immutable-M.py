@@ -14,3 +14,13 @@ class NumMatrix:
         return sum_col2 - sum_col1
 
 
+# Your NumMatrix object will be instantiated and called as such:
+matrix = [[3,0,1,4,2],[5,6,3,2,1],[1,2,0,1,5],[4,1,0,1,7],[1,0,3,0,5]]
+obj = NumMatrix(matrix)
+row1, col1, row2, col2 = 2,1,4,3
+Output = obj.sumRegion(row1,col1,row2,col2)
+ExpectedOutput = 8
+print("\nOutput is:      ", Output ,"\n" )
+print("Expected Output:",ExpectedOutput,"\n" )
+print("The output matches with expected Output: ", ExpectedOutput == Output, "\n" )
+print("Time Complexity is: O(n) for constructor and O(1) for the sumRegion function \n" )
