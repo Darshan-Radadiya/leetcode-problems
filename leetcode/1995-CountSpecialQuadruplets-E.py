@@ -2,14 +2,13 @@ class Solution:
     def countQuadruplets(self, nums: list[int]) -> int:
         n = len(nums)
         res = 0
-        nums.sort()
-        for i in range(n):
-            for j in range(i, n):
-                for k in range(j, n):
-                    for l in range(k, n):
-                        if nums[i] <= nums[j] <= nums[k] and nums[i] + nums[j] + nums[k] == nums[l]:
+        for i in range(n-3):
+            for j in range(i+1, n-2):
+                for k in range(j+1, n-1):
+                    for l in range(k+1, n):
+                        if nums[i] + nums[j] + nums[k] == nums[l]:
                             res += 1
-        return res//(n-1)
+        return res
 
 
 
