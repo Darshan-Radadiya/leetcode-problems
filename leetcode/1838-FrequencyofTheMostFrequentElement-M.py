@@ -1,5 +1,5 @@
 class Solution:
-    def maxFrequency(self, nums: List[int], k: int) -> int:
+    def maxFrequency(self, nums: list[int], k: int) -> int:
         nums.sort()
 
         l, r = 0, 0
@@ -18,6 +18,7 @@ class Solution:
 nums = [1,4,8,13]
 k = 5
 ExpectedOutput = 2
+sol = Solution()
 Output = sol.maxFrequency(nums, k) 
 print("\nOutput is:      ", Output ,"\n" )
 print("Expected Output:",ExpectedOutput,"\n" )
