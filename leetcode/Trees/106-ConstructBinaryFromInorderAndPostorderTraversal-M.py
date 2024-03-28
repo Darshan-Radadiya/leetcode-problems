@@ -19,7 +19,14 @@ class Solution:
                 return None
             root = TreeNode(postorder.pop())
             idx = inorderIndexMap[root.val]
-
+            # Right subtree is built first because examining the postorder traversal allows us to determine the root, 
+            # left subtree, and right subtree in that order. Postorder traversal ensures that the root node is visited last. 
+            # By utilizing the in-order traversal alongside the postorder traversal, crucial information about the binary tree's
+            # structure can be inferred. The in-order traversal indicates the sequence of nodes visited when traversing the 
+            # left subtree, root node, and right subtree. Since the root node is always the last node visited in postorder 
+            # traversal, this information is utilized to determine where the right subtree begins and where the left subtree ends.
+            #  Therefore, constructing the right subtree first simplifies the process and ensures accurate reconstruction of the 
+            # binary tree from its inorder and postorder traversals.
             root.right = buildSubTree(idx + 1, right) 
             root.left = buildSubTree(left, idx - 1) 
             return root
