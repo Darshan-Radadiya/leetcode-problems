@@ -3,7 +3,6 @@ import heapq
 class Solution:
     def findKthLargest(self, nums: List[int], k: int) -> int:
         maxHeap = []
-        heapq.heapify(maxHeap)
         for n in nums:
             heapq.heappush(maxHeap, n)
             while len(maxHeap) > k:
