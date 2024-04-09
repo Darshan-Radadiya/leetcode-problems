@@ -34,11 +34,11 @@ class Solution:
 
 board = [["A","B","C","E"],["S","F","C","S"],["A","D","E","E"]]
 word = "ABCCED"
-Output = True
 sol = Solution()
-print("Expected Output:", Output)
-print("Output: ",sol.exist(board,word))
-   
-   
-# O(n * m * dfs)
-# O( n * m * 4*wordLen) = 4 bcs we r calling dfs 4 time.
+Output = sol.exist(board,word)
+ExpectedOutput = True
+print("\nOutput is:      ", Output ,"\n" )
+print("Expected Output:",ExpectedOutput,"\n" )
+print("The output matches with expected Output: ", ExpectedOutput == Output, "\n" )
+print("Time Complexity is: O(n * m * dfs)\n" )   
+# O( n * m * 4^wordLen) = 4 bcs we r calling dfs 4 time.
