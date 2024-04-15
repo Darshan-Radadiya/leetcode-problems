@@ -19,7 +19,7 @@ class WordDictionary:
         currentNode.wordEnd = True
 
     def search(self, word: str) -> bool:
-
+        #  recursive DFS
         def dfs(j, root):
             currentNode = root
             for i in range(j,len(word)):
@@ -35,6 +35,21 @@ class WordDictionary:
             return currentNode.wordEnd
 
         return dfs(0,self.root)
+    
+    #  Iterative DFS
+    def search(self, word: str) -> bool:
+        stack = [(self.root,0)]
+        while stack:
+            curr,idx = stack.pop()
+            if idx == len(word):
+                if curr.wordEnd:
+                    return True
+            elif word[idx] == '.':
+                for child in curr.childNode.values():
+                    stack.append((child,idx+1))
+            elif word[idx] in curr.childNode:
+                stack.append((curr.childNode[word[idx]], idx+1))
+        return False
             
 
 

@@ -48,5 +48,12 @@ class Solution:
 
         return list(res)
 
-
-            
+sol = Solution()
+board = [["o","a","a","n"],["e","t","a","e"],["i","h","k","r"],["i","f","l","v"]]
+words = ["oath","pea","eat","rain"]
+ExpectedOutput = ["eat","oath"]
+Output = sol.findWords(board, words) 
+print("\nOutput is:      ", Output ,"\n" )
+print("Expected Output:",ExpectedOutput,"\n" )
+print("The output matches with expected Output: ", ExpectedOutput == Output, "\n" )
+print("Time Complexity is:  O(m * L + n * L) m is the number of words in the words list. L is the average length of words. n is the total number of cells in the board (ROW * COL).\n" )
