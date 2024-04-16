@@ -1,16 +1,16 @@
 from typing import List
 class Solution:
-    def solveNQueens(self, n: int) -> List[List[str]]:
+    def totalNQueens(self, n: int) -> int:
         colSet = set()
         positiveSet = set()
         negativeSet = set()
         board = [["."] * n for row in range(n)]
-        res = []
+        res = 0
 
         def backtrack(row):
             if row == n:
-                currBoard = ["".join(r) for r in board]
-                res.append(currBoard)
+                nonlocal res
+                res += 1
                 return 
             
             for col in range(n):
@@ -28,12 +28,11 @@ class Solution:
                     negativeSet.remove((row-col))
         backtrack(0)
         return res
-
     
-n = 4
+n = 9
 sol = Solution()
-Output = sol.solveNQueens(n)
-ExpectedOutput = [['.Q..', '...Q', 'Q...', '..Q.'], ['..Q.', 'Q...', '...Q', '.Q..']] 
+Output = sol.totalNQueens(n)
+ExpectedOutput = 352
 print("\nOutput is:      ", Output ,"\n" )
 print("Expected Output:",ExpectedOutput,"\n" )
 print("The output matches with expected Output: ", ExpectedOutput == Output, "\n" )
