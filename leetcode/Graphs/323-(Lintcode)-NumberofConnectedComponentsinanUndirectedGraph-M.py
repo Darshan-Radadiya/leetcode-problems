@@ -36,16 +36,44 @@ class Solution:
       numOfDisJoint -= union(e1, e2)
     return numOfDisJoint
 
+# DFS solution
+  def countComponents2(Self, n, edges):
+    def createAdjacencyList(edges):
+      adj = {}
+      for parent, child in edges:
+          if parent not in adj: adj[parent] = []
+          if child not in adj: adj[child] = []
+          adj[parent].append(child)
+          adj[child].append(parent)
+      return adj
+    
+    def explore(graph, curr, visited):
+      if curr not in visited:
+          visited.add(curr)
+          for nei in graph[curr]:
+            explore(graph, nei, visited)
+          return True
+      return False
+
+    count = 0
+    graph = createAdjacencyList(edges)
+    visited = set()
+    for node in graph:
+      if (explore(graph, node, visited)):
+        count += 1
+    return count
+
 sol = Solution()
 # n = 5
 # edges = [[0,1],[1,2],[3,4]]
 
 n = 6
 edges = [[0, 1], [1, 2], [3, 4], [4, 5]]
-
 ExpectedOutput = 2
-Output = sol.countComponents(n, edges) 
-print("\nOutput is:      ", Output ,"\n" )
+Output = sol.countComponents2(n, edges) 
+Output2 = sol.countComponents(n, edges) 
+print("\nUnion Output is:      ", Output ,"\n" )
+print("\nDFS Output is:        ", Output2 ,"\n" )
 print("Expected Output:",ExpectedOutput,"\n" )
 print("The output matches with expected Output: ", ExpectedOutput == Output, "\n" )
 print("Time Complexity is: O(Edges + Vertices) == O(|E| + |V|)\n" )
