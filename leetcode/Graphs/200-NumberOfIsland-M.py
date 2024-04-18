@@ -27,7 +27,10 @@ class Solution:
         return numberOfIsland
     
 grid = [["1","1","1","1","0"],["1","1","0","1","0"],["1","1","0","0","0"],["0","0","0","0","0"]]
-Output = 1
 sol = Solution()
-print("Expected Output:", Output)
-print("Output: ",sol.numIslands(grid))
+Output = sol.numIslands(grid)
+ExpectedOutput = 1
+print("Output is:      ", Output ,"\n" )
+print("Expected Output:",ExpectedOutput,"\n" )
+print("The output matches with expected Output: ", ExpectedOutput == Output, "\n" )
+print("Time and Space Complexity is: O(Row * Col)\n" )
