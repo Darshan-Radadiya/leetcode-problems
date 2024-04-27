@@ -2,6 +2,31 @@ from collections import defaultdict
 
 class Solution:
     def canFinish(self, numCourses, prerequisites):
+
+        # Cycle detection in DG.
+        def dfs(u):
+            visited.add(u)
+            inRecursion.add(u)
+            for v in adj[u]:
+                if v not in visited and dfs(v):
+                    return True
+                elif v in inRecursion:
+                    return True
+            inRecursion.remove(u)
+            return False
+        
+        adj = defaultdict(list)
+        for i in range(numCourses):
+            adj[i] = []
+        for crs, preReq in prerequisites:
+            adj[preReq].append(crs)
+        
+        visited = set()
+        inRecursion = set()
+        for i in range(numCourses):
+            if i not in visited and dfs(i):
+                return False
+        return True
         
         # preMap = { i:[] for i in range(numCourses)}
         preMap = defaultdict(list)
