@@ -18,6 +18,9 @@ class Solution:
 
 sol = Solution()
 s = "()[]{}"
-Output = True
-print("Expected Output:", Output)
-print("Output: ", sol.isValid(s))
+ExpectedOutput = True
+Output = sol.isValid(s)
+print("Output is:      ", Output ,"\n" )
+print("Expected Output:",ExpectedOutput,"\n" )
+print("The output matches with expected Output: ", ExpectedOutput == Output, "\n" )
+print("Time Complexity is:O(N) and Space is O(N)\n" )
