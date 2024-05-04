@@ -22,7 +22,7 @@ class Solution:
                 # move top left into top right
                 matrix[top + i][r] = topLeft
             r -= 1
-            l += 1
+            l += 1 
         return matrix
 
 
