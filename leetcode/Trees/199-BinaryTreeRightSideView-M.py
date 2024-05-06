@@ -6,8 +6,10 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
+        
 class Solution:
     def rightSideView(self, root: Optional[TreeNode]) -> List[int]:
+        # Space and time complexity is O(n).
         if not root:
             return root
         q = deque()
@@ -25,4 +27,22 @@ class Solution:
             if rightSide:
                 res.append(rightSide.val)
         return res
+        
+        # Space will be O(h) and time O(n)
+        def reversePreorder(node, currLevel):
+            if not node:
+                return 
+            if len(rightSideView) == currLevel:
+                rightSideView.append(node.val)
+            
+            if node.right: 
+                reversePreorder(node.right, currLevel + 1)
+            if node.left: 
+                reversePreorder(node.left, currLevel + 1)
+        rightSideView = []
+        reversePreorder(root, 0)
+        return rightSideView
+                
+
+
             
