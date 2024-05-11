@@ -100,22 +100,24 @@ class LinkedList:
     def deleteElementWithValue(self, data):
         if self.head is None:
             return
-        else:
-            curr_node = self.head
-            while curr_node and curr_node.data != data:
-                curr_node = curr_node.next
-            
-            if curr_node is None:
-                return
-            else:
-                curr_node.next = curr_node.next.next
-            
-            
+        
+        if self.head.data == data:
+            self.head = self.head.next
+            return
+
+        curr_node = self.head
+        while curr_node.next and curr_node.next.data != data:
+            curr_node = curr_node.next
+
+        if curr_node.next:
+            curr_node.next = curr_node.next.next
+
     def printLinkedList(self):
         curr_node = self.head
         while(curr_node):
-            print("I am data", curr_node.data)
+            print(curr_node.data, end=" -> ")
             curr_node = curr_node.next
+        print()
 
 
 
@@ -125,6 +127,11 @@ ll.insertNodeAtStart(0)
 ll.insertNodeAtEnd(1)
 ll.insertNodeAtEnd(10)
 ll.insertNodeAtEnd(100)
+ll.insertNodeAtEnd(101)
+ll.insertNodeAtEnd(13)
+
+ll.deleteElementWithValue(100)
+ll.printLinkedList()
 
 ll.insertNodeAtIndex(5,2)
 ll.insertNodeAtIndex(50,4)
