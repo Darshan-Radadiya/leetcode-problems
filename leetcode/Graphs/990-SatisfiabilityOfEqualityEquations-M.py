@@ -11,13 +11,16 @@ class Solution:
         def union(x, y):
             xParent = find(x)
             yParent = find(y)
-            if xParent > yParent:
+
+            if xParent == yParent:
+                return
+            if rank[xParent] > rank[yParent]:
                 parent[yParent] = xParent
-            elif xParent < yParent:
+            elif rank[xParent] < rank[yParent]:
                 parent[xParent] = yParent
             else:
-                parent[xParent] = yParent
-                rank[yParent] += 1
+                parent[yParent] = xParent
+                rank[xParent] += 1
             
         parent = [i for i in range(27)]
         rank = [1] * 26
