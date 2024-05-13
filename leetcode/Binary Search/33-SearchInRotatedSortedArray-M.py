@@ -1,7 +1,6 @@
 class Solution:
     def search(self, nums,target):
 
-        
         l, r = 0, len(nums) - 1
         
         while l <= r:
@@ -25,9 +24,6 @@ class Solution:
                     l = mid + 1
         return -1
             
-        
-
-
 sol = Solution()
 nums = [4,5,6,7,0,1,2]
 target = 0
@@ -41,5 +37,10 @@ Output = 4
 # target = 0
 # Output = -1
 
-print("Expected Output:", Output)
-print("Output: ", sol.search(nums,target))
+sol = Solution()
+ExpectedOutput = 4
+Output = sol.search(nums, target) 
+print("\nOutput is:      ", Output ,"\n" )
+print("Expected Output:", ExpectedOutput,"\n" )
+print("The output matches with expected Output: ", ExpectedOutput == Output, "\n" )
+print("Time Complexity is: O(log n) AND Space Complexity is: O(1)\n" )
