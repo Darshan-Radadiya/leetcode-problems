@@ -10,6 +10,13 @@ class Solution:
             if nums[zeroPointer] != 0:
                 zeroPointer += 1
         return nums
+    
+        # ---------------------- or --------------------------
+        writePointer = 0
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[writePointer], nums[i] = nums[i], nums[writePointer]
+                writePointer += 1
 sol = Solution()
 nums = [1,0,1]
 ExpectedOutput = [1,1,0]
@@ -17,4 +24,4 @@ Output = sol.moveZeroes(nums)
 print("\nOutput is:      ", Output ,"\n" )
 print("Expected Output:",ExpectedOutput,"\n" )
 print("The output matches with expected Output: ", ExpectedOutput == Output, "\n" )
-print("Time and space Complexity is: O(n)\n" )
+print("Time Complexity is: O(n)\n" )
