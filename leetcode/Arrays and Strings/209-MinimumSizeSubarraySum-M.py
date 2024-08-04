@@ -20,5 +20,5 @@ ExpectedOutput = 2
 print("\nOutput is:      ", Output ,"\n" )
 print("Expected Output:",ExpectedOutput,"\n" )
 print("The output matches with expected Output: ", ExpectedOutput == Output, "\n" )
-print("Time Complexity is: O(nlogn)\n" )
+print("Time Complexity is: O(n)\n" )
 
